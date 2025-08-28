@@ -38,7 +38,7 @@ const socialLinks: SocialLink[] = [
   {
     name: "GeeksForGeeks",
     icon: <SiGeeksforgeeks size={30} />,
-    url: "https://www.geeksforgeeks.org/user/apurvma2koe/",
+    url: "https://www.geeksforgeeks.org/user/geekapurv/",
     hoverColor: "hover:border-green-800",
   },
 ];
