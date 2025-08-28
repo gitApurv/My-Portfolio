@@ -2,7 +2,7 @@
 
 This is the source code for my personal developer portfolio, built with **Next.js**, **TypeScript**, and styled with **Tailwind CSS**. The site is a modern, fully responsive single-page application designed to showcase my skills, projects, and professional background.
 
-[**Live Preview**]([https://your-portfolio-url.com](https://my-portfolio-eight-theta-70.vercel.app/)) 
+[**Live Preview**](https://my-portfolio-eight-theta-70.vercel.app/)) 
 
 
 ## ✨ Features
