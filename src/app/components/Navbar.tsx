@@ -1,3 +1,4 @@
+// components/Navbar.tsx
 import Link from "next/link";
 import React from "react";
 
@@ -30,6 +31,12 @@ const Navbar: React.FC = () => {
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Projects
+              </Link>
+              <Link
+                href="#socials"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+              >
+                Socials
               </Link>
               <Link
                 href="#contact"

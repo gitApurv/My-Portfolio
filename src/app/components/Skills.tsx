@@ -30,7 +30,7 @@ const skillsData: Skill[] = [
   { icon: <FaCss3Alt size={50} />, name: "CSS3" },
   { icon: <FaJs size={50} />, name: "JavaScript" },
   { icon: <SiTypescript size={50} />, name: "TypeScript" },
-  { icon: <FaReact size={50} />, name: "React" },
+  { icon: <FaReact size={50} />, name: "React.js" },
   { icon: <SiNextdotjs size={50} />, name: "Next.js" },
   { icon: <SiTailwindcss size={50} />, name: "Tailwind CSS" },
   { icon: <FaNodeJs size={50} />, name: "Node.js" },
@@ -51,7 +51,7 @@ const Skills: React.FC = () => {
     <section id="skills" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
-          My Tech Stack
+          Skills
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {skillsData.map((skill, index) => (

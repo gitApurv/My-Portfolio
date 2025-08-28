@@ -13,31 +13,11 @@ const Hero: React.FC = () => {
           Hi, I'm <span className="text-indigo-400">Apurv Maurya</span>
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-gray-300">
-          I build scalable, secure, and user-focused web applications with the
-          MERN stack and a passion for advancing my skills in Next.js and
-          AI-powered solutions.
+          Full Stack Developer | Self-taught. Curious. Code-driven.
         </p>
         <div className="mt-8 flex justify-center md:justify-start space-x-4">
           <a
-            href="https://github.com/gitApurv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition duration-300"
-          >
-            <FaGithub size={32} />
-          </a>
-          <a
-            href="https://linkedin.com/in/apurvmaurya"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition duration-300"
-          >
-            <FaLinkedin size={32} />
-          </a>
-        </div>
-        <div className="mt-8 flex justify-center md:justify-start space-x-4">
-          <a
-            href="https://drive.google.com/file/d/11Gzj1CShGvzzJTFki23Moa1gkaSYkqHZ/view?usp=sharing"
+            href="/Apurv_Maurya_Resume.pdf"
             target="_blank"
             className="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
           >

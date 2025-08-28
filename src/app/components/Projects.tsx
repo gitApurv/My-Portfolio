@@ -13,31 +13,53 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "DocAI",
     description:
-      "A fully-featured e-commerce site built with the MERN stack, including payment integration and an admin dashboard.",
-    image: "/project1.png", // Place your image in the public folder
-    tags: ["React", "Node.js", "MongoDB", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "DocAI is an AI-powered medical assistant that enables real-time healthcare interactions. Built with Next.js and Postgres, it integrates voice and AI technologies for smart medical suggestions, speech-to-text, and text-to-speech. With secure authentication, billing, and an intuitive dashboard, it offers both free and premium users a seamless experience.",
+    image: "/project1.png",
+    tags: [
+      "Next.js",
+      "NeonDB(Postgres)",
+      "Drizzle ORM",
+      "Clerk",
+      "Gemini API",
+      "AssemblyAI",
+      "Vapi",
+    ],
+    liveUrl: "https://doc-ai-green.vercel.app/",
+    githubUrl: "https://github.com/gitApurv/DocAI",
   },
   {
-    title: "Task Management App",
+    title: "ShopiFyzz",
     description:
-      "A collaborative task management tool with real-time updates using Next.js and Firebase.",
-    image: "/project2.png", // Place your image in the public folder
-    tags: ["Next.js", "Firebase", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "ShopiFyzz is a full-stack MERN e-commerce platform designed for a smooth shopping experience. It features secure JWT authentication, product and order management, and Cloudinary image uploads. With automated PDF receipts, email notifications, and a responsive Material UI, it ensures reliability for both customers and sellers.",
+    image: "/project2.png",
+    tags: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Material UI",
+      "Cloudinary",
+    ],
+    liveUrl: "https://shopifyzz.netlify.app/",
+    githubUrl: "https://github.com/gitApurv/ShopiFyzz",
   },
   {
-    title: "Portfolio Website",
+    title: "Roamify",
     description:
-      "My personal portfolio site (the one you are looking at!) to showcase my skills and projects.",
-    image: "/project3.png", // Place your image in the public folder
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Roamify is a full-stack MERN travel journal platform that lets users pin their memories on an interactive world map. It provides secure JWT authentication, full CRUD functionality for travel entries, and a dynamic map interface with geolocation and location search. Deployed seamlessly, it delivers a responsive and engaging travel experience.",
+    image: "/project3.png",
+    tags: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "React Map GL",
+      "MapLibre",
+    ],
+    liveUrl: "https://travel-app-roamify.netlify.app/",
+    githubUrl: "https://github.com/gitApurv/Roamify",
   },
 ];
 
@@ -58,8 +80,8 @@ const Projects: React.FC = () => {
                 src={project.image}
                 alt={project.title}
                 width={600}
-                height={400}
-                className="w-full h-48 object-cover"
+                height={600}
+                className="object-cover"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">

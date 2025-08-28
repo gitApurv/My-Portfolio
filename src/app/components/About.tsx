@@ -9,19 +9,22 @@ const About: React.FC = () => {
         </h2>
         <div className="max-w-3xl mx-auto text-center text-gray-300 text-lg">
           <p className="mb-4">
-            Hello! I'm a self-motivated developer with a strong passion for
-            building beautiful and functional websites. I specialize in the MERN
-            stack (MongoDB, Express, React, Node.js) but I am always eager to
-            learn new technologies.
+            I'm Apurv Maurya, a Full-Stack Developer passionate about building
+            scalable, secure, and user-friendly applications. With strong
+            expertise in the MERN stack, Next.js, and cloud integrations, I
+            enjoy turning complex problems into elegant solutions.
           </p>
           <p className="mb-4">
-            My journey into web development started with a simple "Hello World"
-            and has grown into a full-fledged passion. I enjoy solving complex
-            problems and turning ideas into reality.
+            My journey blends a solid foundation in data structures, algorithms,
+            and core CS fundamentals with hands-on experience creating
+            AI-powered SaaS tools, e-commerce platforms, and interactive web
+            apps. I thrive on learning new technologies and exploring SaaS
+            architectures, AI-driven applications, and cloud-native systems.
           </p>
           <p>
-            When I'm not coding, I enjoy watching movies, reading tech blogs,
-            and enjoying the outdoors.
+            ⚡ Driven by curiosity and creativity, my goal is to craft digital
+            products that are not only technically strong but also deliver real
+            value to users.
           </p>
         </div>
       </div>

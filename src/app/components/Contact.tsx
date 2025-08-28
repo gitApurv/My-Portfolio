@@ -18,24 +18,6 @@ const Contact: React.FC = () => {
             apurvmaurya5@gmail.com
           </a>
         </div>
-        <div className="flex justify-center space-x-6">
-          <a
-            href="https://github.com/gitApurv"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition duration-300"
-          >
-            <FaGithub size={30} />
-          </a>
-          <a
-            href="https://linkedin.com/in/apurvmaurya"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-400 transition duration-300"
-          >
-            <FaLinkedin size={30} />
-          </a>
-        </div>
         <p className="mt-8 text-gray-500 text-sm">
           © {new Date().getFullYear()} Apurv Maurya. All rights reserved.
         </p>
