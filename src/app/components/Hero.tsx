@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         </p>
         <div className="mt-8 flex justify-center md:justify-start space-x-4">
           <a
-            href="/Apurv_Maurya_Resume.pdf"
+            href="/resume.pdf"
             target="_blank"
             className="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300"
           >
