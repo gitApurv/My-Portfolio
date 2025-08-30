@@ -50,17 +50,21 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
-          Skills
+        <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
+          🛠 Skills
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition duration-300"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-800/70 border border-gray-700 backdrop-blur-sm shadow-md hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             >
-              <div className="text-indigo-400 mb-4">{skill.icon}</div>
-              <h3 className="text-lg font-semibold text-white">{skill.name}</h3>
+              <div className="text-indigo-400 mb-4 text-4xl group-hover:scale-125 transition-transform duration-300">
+                {skill.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-white group-hover:text-indigo-400 transition">
+                {skill.name}
+              </h3>
             </div>
           ))}
         </div>

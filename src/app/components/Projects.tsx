@@ -41,6 +41,8 @@ const projectsData: Project[] = [
       "MongoDB",
       "Material UI",
       "Cloudinary",
+      "NodeMailer",
+      "PDFKit",
     ],
     liveUrl: "https://shopifyzz.netlify.app/",
     githubUrl: "https://github.com/gitApurv/ShopiFyzz",
@@ -61,59 +63,89 @@ const projectsData: Project[] = [
     liveUrl: "https://travel-app-roamify.netlify.app/",
     githubUrl: "https://github.com/gitApurv/Roamify",
   },
+  {
+    title: "NextStay",
+    description:
+      "NextStay is a full-stack Airbnb-style property rental platform built with Next.js, MongoDB, and NextAuth.js. It enables users to list, browse, and bookmark properties, manage profiles, and communicate securely with property owners. Featuring Google OAuth login, secure authentication, and a fully responsive UI, NextStay delivers a seamless and interactive property rental experience.",
+    image: "/project4.png",
+    tags: [
+      "Next.js",
+      "MongoDB",
+      "Mongoose",
+      "NextAuth.js",
+      "Tailwind CSS",
+      "Cloudinary",
+    ],
+    liveUrl: "https://next-stay-ebon.vercel.app/",
+    githubUrl: "https://github.com/gitApurv/NextStay",
+  },
 ];
 
 const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
-          Projects
+        <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
+          🚀 Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/50 transition-shadow duration-300"
+              className="group bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-2"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={600}
-                className="object-cover"
-              />
+              <div className="relative w-full h-56 overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={600}
+                  className="w-full h-full transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-full shadow hover:bg-indigo-500 transition"
+                  >
+                    View Live
+                  </a>
+                </div>
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-5">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="bg-indigo-600 text-white text-xs font-semibold px-2.5 py-1 rounded-full"
+                      className="bg-indigo-600/80 text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-end space-x-4">
+                <div className="flex justify-end items-center space-x-4">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-indigo-400 transition duration-300"
+                    className="text-gray-400 hover:text-indigo-400 transition duration-300"
                   >
-                    <FaGithub size={24} />
+                    <FaGithub size={22} />
                   </a>
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-indigo-400 transition duration-300"
+                    className="text-gray-400 hover:text-indigo-400 transition duration-300"
                   >
-                    <FaExternalLinkAlt size={24} />
+                    <FaExternalLinkAlt size={20} />
                   </a>
                 </div>
               </div>
