@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
                 <h3 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed line-clamp-3">
+                <p className="text-gray-400 mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-5">
