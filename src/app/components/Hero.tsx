@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
 
       <div className="mt-10 md:mt-0 md:w-1/3 flex justify-center">
         <Image
-          src="/profile.jpg"
+          src="/profile.png"
           alt="Profile Picture"
           width={400}
           height={400}
