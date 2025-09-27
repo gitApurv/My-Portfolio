@@ -18,8 +18,9 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: my-portfolio
-          environment_name: My-portfolio-env
-          version_label: ${{ github.sha}}
+          application_name: My-Portfolio
+          environment_name: My-Portfolio-Prod
+          version_label: ${{ github.sha }}
+          existing_bucket_name: elasticbeanstalk-ap-south-1-729468324884
           region: ap-south-1
           deployment_package: deploy.zip
