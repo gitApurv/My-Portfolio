@@ -2,12 +2,12 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-gray-800">
+    <section id="about" className="py-20 bg-gray-900 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-12 tracking-wide">
           👨‍💻 About Me
         </h2>
-        <div className="max-w-3xl mx-auto text-center text-gray-300 text-lg leading-relaxed space-y-6">
+        <div className="max-w-3xl mx-auto text-center text-gray-300 text-lg leading-relaxed space-y-6 bg-gray-800/50 p-8 rounded-3xl border border-white/5 shadow-xl backdrop-blur-sm">
           <p>
             Hey! I'm{" "}
             <span className="text-indigo-400 font-semibold">Apurv Maurya</span>,

@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface Project {
   title: string;
@@ -82,8 +83,31 @@ const projectsData: Project[] = [
 ];
 
 const Projects: React.FC = () => {
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-10");
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    projectRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="projects" className="py-20 bg-gray-800">
+    <section id="projects" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
           🚀 Projects
@@ -92,7 +116,10 @@ const Projects: React.FC = () => {
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className="group bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-indigo-500/30 transition-all duration-300 transform hover:-translate-y-2"
+              ref={(el) => {
+                projectRefs.current[index] = el;
+              }}
+              className="opacity-0 translate-y-10 group bg-gray-800 rounded-2xl overflow-hidden border border-white/5 shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-700 ease-out transform hover:-translate-y-2"
             >
               <div className="relative w-full h-56 overflow-hidden">
                 <Image
@@ -107,7 +134,7 @@ const Projects: React.FC = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-full shadow hover:bg-indigo-500 transition"
+                    className="px-6 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-full shadow-lg hover:bg-indigo-500 hover:scale-105 transition-all duration-300"
                   >
                     View Live
                   </a>
@@ -124,7 +151,7 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
-                      className="bg-indigo-600/80 text-white text-xs font-medium px-3 py-1 rounded-full shadow-sm"
+                      className="bg-indigo-900/50 text-indigo-200 border border-indigo-500/20 text-xs font-medium px-3 py-1 rounded-full"
                     >
                       {tag}
                     </span>
@@ -138,14 +165,6 @@ const Projects: React.FC = () => {
                     className="text-gray-400 hover:text-indigo-400 transition duration-300"
                   >
                     <FaGithub size={22} />
-                  </a>
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-indigo-400 transition duration-300"
-                  >
-                    <FaExternalLinkAlt size={20} />
                   </a>
                 </div>
               </div>

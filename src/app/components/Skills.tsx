@@ -48,7 +48,7 @@ const skillsData: Skill[] = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-gray-800 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
           🛠 Skills
@@ -57,7 +57,7 @@ const Skills: React.FC = () => {
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-800/70 border border-gray-700 backdrop-blur-sm shadow-md hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-900/50 border border-white/5 backdrop-blur-sm shadow-lg hover:shadow-indigo-500/20 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
             >
               <div className="text-indigo-400 mb-4 text-4xl group-hover:scale-125 transition-transform duration-300">
                 {skill.icon}

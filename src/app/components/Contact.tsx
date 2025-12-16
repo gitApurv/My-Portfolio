@@ -3,7 +3,10 @@ import { FaEnvelope } from "react-icons/fa";
 
 const Contact: React.FC = () => {
   return (
-    <footer id="contact" className="bg-gray-800 text-white py-16">
+    <footer
+      id="contact"
+      className="bg-linear-to-t from-black to-gray-900 text-white py-16 border-t border-white/10"
+    >
       <div className="container mx-auto text-center px-6">
         <h2 className="text-4xl font-extrabold mb-6 tracking-wide">
           📬 Get In Touch
@@ -17,9 +20,9 @@ const Contact: React.FC = () => {
         <div className="flex justify-center items-center">
           <a
             href="mailto:apurvmaurya5@gmail.com"
-            className="flex items-center px-6 py-3 bg-indigo-600 rounded-full 
-        text-white font-medium text-lg shadow-md hover:shadow-xl 
-        transition-all duration-300 hover:bg-indigo-500"
+            className="flex items-center px-8 py-4 bg-indigo-600 rounded-full 
+        text-white font-medium text-lg shadow-lg hover:shadow-indigo-500/40 
+        transition-all duration-300 hover:bg-indigo-500 hover:scale-105"
           >
             <FaEnvelope size={22} className="mr-2" />
             apurvmaurya5@gmail.com

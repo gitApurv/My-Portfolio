@@ -44,7 +44,7 @@ const socialLinks: SocialLink[] = [
 
 const Socials: React.FC = () => {
   return (
-    <section id="socials" className="py-20 bg-gray-900">
+    <section id="socials" className="py-20 bg-gray-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
           📱Socials
@@ -55,7 +55,7 @@ const Socials: React.FC = () => {
               key={index}
               href={link.url}
               target="_blank"
-              className={`group flex items-center justify-center w-full p-4 bg-gray-800/70 rounded-2xl border border-gray-700 hover:shadow-lg hover:-translate-y-2 ${link.hoverColor} transition-all duration-300 cursor-pointer`}
+              className={`group flex items-center justify-center w-full p-4 bg-gray-900/50 rounded-2xl border border-white/5 hover:border-indigo-500/30 hover:shadow-lg hover:-translate-y-1 ${link.hoverColor} transition-all duration-300 cursor-pointer backdrop-blur-sm`}
             >
               <span className="text-indigo-400 mr-4 text-4xl group-hover:scale-125 transition-transform duration-300">
                 {link.icon}
