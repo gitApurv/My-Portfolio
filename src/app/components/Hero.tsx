@@ -7,6 +7,18 @@ const Hero: React.FC = () => {
   const fullText = "Full Stack Developer";
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -84,8 +96,8 @@ const Hero: React.FC = () => {
       className="relative flex flex-col md:flex-row items-center justify-center min-h-screen bg-linear-to-b from-gray-900 via-gray-900 to-gray-800 px-6 lg:px-12 py-20 overflow-hidden"
     >
       {/* Background Glows */}
-      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600/20 rounded-full blur-[100px] opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-600/20 rounded-full blur-[100px] opacity-50 pointer-events-none"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px] opacity-50 pointer-events-none animate-pulse-slow"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-600/20 rounded-full blur-[120px] opacity-50 pointer-events-none animate-pulse-slow"></div>
 
       {/* Particle Canvas */}
       <canvas
@@ -93,10 +105,10 @@ const Hero: React.FC = () => {
         className="absolute inset-0 z-0 pointer-events-none"
       />
 
-      <div className="relative z-10 md:w-1/2 md:pr-12 text-center md:text-left">
+      <div className="relative z-10 md:w-1/2 md:pr-12 text-center md:text-left animate-fade-in-up">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
           Hi, I'm{" "}
-          <span className="inline-block text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-purple-500 drop-shadow-sm">
+          <span className="inline-block text-transparent bg-clip-text bg-linear-to-r from-indigo-400 via-purple-500 to-pink-500 drop-shadow-lg animate-gradient">
             Apurv Maurya
           </span>
         </h1>
@@ -111,36 +123,28 @@ const Hero: React.FC = () => {
           <a
             href="/resume.pdf"
             target="_blank"
-            className="bg-linear-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-indigo-500/30 hover:scale-105 transition-all duration-300"
+            className="bg-linear-to-r from-indigo-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-105 transition-all duration-300"
           >
             📄 Resume
           </a>
           <a
             href="#contact"
-            className="border border-indigo-500/50 bg-gray-800/50 text-indigo-300 font-semibold py-3 px-8 rounded-full hover:bg-indigo-600 hover:text-white hover:border-indigo-600 transition-all duration-300 backdrop-blur-sm"
+            onClick={(e) => handleScroll(e, "#contact")}
+            className="border border-indigo-500/50 bg-gray-800/50 text-indigo-300 font-semibold py-3 px-8 rounded-full hover:bg-indigo-600 hover:text-white hover:border-indigo-600 hover:scale-105 transition-all duration-300 backdrop-blur-sm"
           >
             ✉️ Contact Me
           </a>
         </div>
       </div>
 
-      <div className="relative z-10 mt-12 md:mt-0 md:w-1/3 flex justify-center">
-        <style>
-          {`
-            @keyframes float {
-              0% { transform: translateY(0px); }
-              50% { transform: translateY(-20px); }
-              100% { transform: translateY(0px); }
-            }
-          `}
-        </style>
-        <div style={{ animation: "float 6s ease-in-out infinite" }}>
+      <div className="relative z-10 mt-12 md:mt-0 md:w-1/3 flex justify-center animate-fade-in-up animation-delay-300">
+        <div className="animate-float">
           <Image
             src="/profile.png"
             alt="Profile Picture"
             width={400}
             height={400}
-            className="rounded-full shadow-[0_0_40px_rgba(79,70,229,0.3)] border-4 border-indigo-500/20 hover:scale-105 transition-transform duration-500 object-cover"
+            className="rounded-full shadow-[0_0_60px_rgba(79,70,229,0.4)] border-4 border-indigo-500/30 hover:scale-105 hover:shadow-[0_0_80px_rgba(79,70,229,0.6)] transition-all duration-500 object-cover"
           />
         </div>
       </div>

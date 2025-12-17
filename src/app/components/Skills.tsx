@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { DiRedis } from "react-icons/di";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
@@ -48,21 +49,28 @@ const skillsData: Skill[] = [
 
 const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-800 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-extrabold text-center text-white mb-16 tracking-wide">
-          🛠 Skills
+    <section id="skills" className="py-20 bg-gray-800 relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-center text-white mb-16 tracking-wide">
+          <span>🛠</span>
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-purple-500">
+            Skills
+          </span>
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {skillsData.map((skill, index) => (
             <div
               key={index}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-900/50 border border-white/5 backdrop-blur-sm shadow-lg hover:shadow-indigo-500/20 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2 cursor-pointer"
+              className="group flex flex-col items-center justify-center p-6 rounded-2xl bg-gray-900/50 border border-white/10 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-indigo-500/20 hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-2 cursor-pointer animate-fade-in"
+              style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="text-indigo-400 mb-4 text-4xl group-hover:scale-125 transition-transform duration-300">
+              <div className="text-indigo-400 mb-4 text-4xl group-hover:scale-125 group-hover:text-purple-400 transition-all duration-300">
                 {skill.icon}
               </div>
-              <h3 className="text-lg font-semibold text-white group-hover:text-indigo-400 transition">
+              <h3 className="text-base font-semibold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-indigo-400 group-hover:to-purple-500 transition-all duration-300 text-center">
                 {skill.name}
               </h3>
             </div>

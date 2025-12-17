@@ -50,16 +50,19 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-gray-900/80 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300">
+      <nav className="fixed top-0 left-0 w-full bg-gray-900/90 backdrop-blur-xl border-b border-white/10 z-50 shadow-lg shadow-black/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="shrink-0">
               <Link
                 href="#hero"
                 onClick={(e) => handleScroll(e, "#hero")}
-                className="text-2xl font-bold text-white tracking-wide"
+                className="text-2xl font-bold text-white tracking-wide hover:scale-105 transition-transform duration-300 inline-block"
               >
-                <span className="text-indigo-500">Apurv</span> Maurya
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-purple-500">
+                  Apurv
+                </span>{" "}
+                Maurya
               </Link>
             </div>
 
@@ -70,10 +73,10 @@ const Navbar: React.FC = () => {
                     key={index}
                     href={item.href}
                     onClick={(e) => handleScroll(e, item.href)}
-                    className="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-medium transition-colors duration-300 relative group"
+                    className="text-gray-300 hover:text-indigo-400 px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
                   >
                     {item.name}
-                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-linear-to-r from-indigo-400 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 ))}
               </div>
@@ -83,7 +86,7 @@ const Navbar: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-300 hover:text-white focus:outline-none transition-colors"
+                className="text-gray-300 hover:text-white focus:outline-none transition-all duration-300 hover:scale-110"
               >
                 {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
               </button>
@@ -93,14 +96,14 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="md:hidden bg-gray-900/95 backdrop-blur-xl border-b border-white/10 shadow-xl">
+          <div className="md:hidden bg-gray-900/95 backdrop-blur-xl border-b border-white/10 shadow-xl animate-fade-in">
             <div className="px-4 pt-2 pb-6 space-y-2">
               {navLinks.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
                   onClick={(e) => handleScroll(e, item.href)}
-                  className="block px-3 py-3 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-all"
+                  className="block px-3 py-3 rounded-xl text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800/70 transition-all duration-300 hover:translate-x-1"
                 >
                   {item.name}
                 </Link>
@@ -114,7 +117,7 @@ const Navbar: React.FC = () => {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 hover:scale-110 transition-all duration-300 z-50"
+          className="fixed bottom-8 right-8 bg-linear-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:scale-110 transition-all duration-300 z-50"
           aria-label="Back to Top"
         >
           <FaArrowUp size={20} />
